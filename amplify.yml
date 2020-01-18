@@ -3,11 +3,13 @@ frontend:
   phases:
     preBuild:
       commands:
-        - yarn install
+        - npm install
+        - export PATH=$PATH:$PWD/node_modules/.bin/
         - curl https://intoli.com/install-google-chrome.sh | bash
+        - ng build --prod
     build:
       commands:
-        - yarn scully:build
+        - npm run scully
   artifacts:
     baseDirectory: dist/static
     files:
