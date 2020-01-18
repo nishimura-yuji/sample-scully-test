@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "scully": "scully",
+    "scully": "ng build && scully",
+    "scully:build": "ng build --prod && scully",
     "scully:serve": "scully serve"
   },
   "private": true,
