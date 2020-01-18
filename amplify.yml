@@ -1,9 +1,10 @@
 version: 0.1
 frontend:
   phases:
-    pre-build:
+    preBuild:
       commands:
         - yarn install
+        - curl https://intoli.com/install-google-chrome.sh | bash
     build:
       commands:
         - yarn scully:build
