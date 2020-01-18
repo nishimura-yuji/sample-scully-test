@@ -4,10 +4,12 @@ frontend:
     preBuild:
       commands:
         - yarn install
+        - export PATH=$PATH:$PWD/node_modules/.bin/
         - curl https://intoli.com/install-google-chrome.sh | bash
+        - ng build --prod
     build:
       commands:
-        - yarn scully:build
+        - yarn scully
   artifacts:
     baseDirectory: dist/static
     files:
